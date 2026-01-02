@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>REGION DE DABOU - TOUPAH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; background:#eef4ff;}
+    header {background:#0b5ed7; color:white; padding:20px; text-align:center;}
+    nav {margin-top:10px;}
+    nav a {
+      margin: 0 12px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+    nav a:hover {text-decoration: underline;}
+    .container {padding:20px;}
+    h2 {color:#0b5ed7; text-align:center;}
+    form {
+      max-width:550px;
+      margin:20px auto;
+      background:white;
+      padding:25px;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+    }
+    label {font-weight:bold;}
+    input, select {
+      width:100%;
+      padding:10px;
+      margin-top:5px;
+      margin-bottom:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+    }
+    button {
+      background:#0b5ed7;
+      color:white;
+      border:none;
+      padding:12px;
+      width:100%;
+      border-radius:5px;
+      cursor:pointer;
+      font-size:16px;
+    }
+    button:hover {background:#084298;}
+    footer {
+      background:#0b5ed7;
+      color:white;
+      text-align:center;
+      padding:15px;
+      margin-top:30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>REGION DE DABOU-TOUPAH</h1>
+
+  <!-- ACTIONS -->
+  <nav>
+    <a href="cotisation annuelle.html">Cotisation annuelle</a>
+    <a href="carte scout.html">Carte scoute</a>
+    <a href="attribut.html">Attribut</a>
+    <a href="soutien.html">Soutien</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Phase d'identification – Enregistrement</h2>
+
+  <form>
+    <label>Nom</label>
+    <input type="text" required>
+
+    <label>Prénoms</label>
+    <input type="text" required>
+
+    <label>Date de naissance</label>
+    <input type="date" required>
+
+    <label>District</label>
+    <select id="district" required onchange="mettreAJourGroupe()">
+      <option value="">-- Sélectionner --</option>
+      <option value="dabou">Siège de Dabou</option>
+      <option value="toupah">Siège de Toupah</option>
+      <option value="kotokodji">Kotokodji</option>
+      <option value="pkass">Pkass</option>
+      <option value="cosrou">Cosrou</option>
+      <option value="tiaha">Tiaha</option>
+    </select>
+
+    <label>Groupe</label>
+    <select id="groupe" required>
+      <option value="">-- Choisir d'abord un district --</option>
+    </select>
+
+    <button type="button" onclick="validerIdentification()">
+      Valider l'identification
+    </button>
+  </form>
+</div>
+
+<footer>
+  <p>📞 0757109828 | ✉️ regiondedabou@gmail.com</p>
+  <p>&copy; 2026 – REGION DE DABOU - TOUPAH</p>
+</footer>
+
+<script>
+  function mettreAJourGroupe() {
+    const district = document.getElementById('district').value;
+    const groupe = document.getElementById('groupe');
+    groupe.innerHTML = '<option value="">-- Sélectionner --</option>';
+
+    let options = [];
+    if (district === 'dabou') options = ['SD1','SD2','SD3','SD4','SD5','SD6'];
+    if (district === 'kotokodji') options = ['K1','K2','K3','K4','K5','K6'];
+    if (district === 'toupah') options = ['ST1','ST2','ST3','ST4','ST5','ST6'];
+    if (district === 'pkass') options = ['P1','P2','P3','P4','P5','P6'];
+    if (district === 'cosrou') options = ['C1','C2','C3','C4','C5','C6'];
+    if (district === 'tiaha') options = ['T1','T2','T3','T4','T5','T6'];
+
+    options.forEach(opt => {
+      const option = document.createElement('option');
+      option.value = opt;
+      option.textContent = opt;
+      groupe.appendChild(option);
+    });
+  }
+
+  function validerIdentification() {
+    sessionStorage.setItem("identifie", "oui");
+    alert("Identification validée. Vous pouvez accéder aux actions.");
+  }
+</script>
+
+</body>
+</html>

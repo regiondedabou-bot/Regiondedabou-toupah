@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Attribution – Région de Dabou-Toupah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#eef4ff;
+}
+header{
+  background:#0b5ed7;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.container{
+  padding:20px;
+}
+h2{
+  color:#0b5ed7;
+  text-align:center;
+}
+form{
+  max-width:700px;
+  margin:20px auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+label{
+  font-weight:bold;
+  display:block;
+  margin-top:10px;
+}
+input[type=text],input[type=tel],input[type=number],select{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+fieldset{
+  margin-bottom:15px;
+  padding:15px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+legend{
+  font-weight:bold;
+  color:#0b5ed7;
+}
+.paiement{
+  background:#f1f6ff;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.paiement button{
+  width:48%;
+  margin:5px 1%;
+  padding:12px;
+  font-size:16px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.wave{
+  background:#1dc7a0;
+  color:white;
+}
+.om{
+  background:#ff7a00;
+  color:white;
+}
+button.submit{
+  background:#0b5ed7;
+  color:white;
+  border:none;
+  padding:12px;
+  width:100%;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+}
+button.submit:hover{
+  background:#084298;
+}
+footer{
+  background:#0b5ed7;
+  color:white;
+  text-align:center;
+  padding:15px;
+  margin-top:30px;
+}
+input[type=number].quantite{
+  width:60px;
+  display:inline-block;
+  margin-left:5px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>REGION DE DABOU-TOUPAH</h1>
+<nav>
+  <a href="cotisation annuelle.html">Cotisation</a>
+  <a href="carte scout.html">Carte scoute</a>
+  <a href="soutien.html">Soutien</a>
+</nav>
+</header>
+
+<div class="container">
+<h2>Attribution des articles</h2>
+
+<form id="attributionForm">
+
+<!-- Catégorie Meute -->
+<fieldset>
+<legend>Meute (1000 FCFA par article)</legend>
+<label><input type="checkbox" name="meute" value="1000"> Loup blanc <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Loup noir <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Loup gris <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Loup brun <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Certificat de promesse <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Première étoile <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Deuxième étoile <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Patte tendre <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="meute" value="1000"> Insigne de promesse louveteaux <input type="number" class="quantite" value="1" min="1"></label>
+</fieldset>
+
+<!-- Catégorie Général -->
+<fieldset>
+<legend>Général (2000 FCFA par article)</legend>
+<label><input type="checkbox" name="general" value="2000"> Écusson national <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="general" value="2000"> Bande nationale <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="general" value="2000"> Scout Africa <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="general" value="2000"> Conseil Scoutisme-Guidisme <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="general" value="2000"> OMMS <input type="number" class="quantite" value="1" min="1"></label>
+</fieldset>
+
+<!-- Catégorie Troupe -->
+<fieldset>
+<legend>Troupe (1500 FCFA par article)</legend>
+<label><input type="checkbox" name="troupe" value="1500"> Aspirant <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="troupe" value="1500"> Deuxième classe <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="troupe" value="1500"> Première classe <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="troupe" value="1500"> Promesse <input type="number" class="quantite" value="1" min="1"></label>
+</fieldset>
+
+<!-- Catégorie Poste -->
+<fieldset>
+<legend>Poste (1500 FCFA par article)</legend>
+<label><input type="checkbox" name="poste" value="1500"> Découverte <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="poste" value="1500"> Compagnonnage Pionnier <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="poste" value="1500"> Départ Pionnier <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="poste" value="1500"> Insigne d'engagement <input type="number" class="quantite" value="1" min="1"></label>
+</fieldset>
+
+<!-- Catégorie Clan -->
+<fieldset>
+<legend>Clan (1500 FCFA par article)</legend>
+<label><input type="checkbox" name="clan" value="1500"> Initiation à la route <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="clan" value="1500"> Compagnonnage à la route <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="clan" value="1500"> Départ route 1er degré <input type="number" class="quantite" value="1" min="1"></label>
+<label><input type="checkbox" name="clan" value="1500"> Départ route 2eme degré <input type="number" class="quantite" value="1" min="1"></label>
+</fieldset>
+
+<hr>
+
+<!-- Formulaire utilisateur -->
+<label>Nom</label>
+<input type="text" required>
+
+<label>Prénoms</label>
+<input type="text" required>
+
+<label>District</label>
+<input type="text" required>
+
+<label>Groupe</label>
+<input type="text" required>
+
+<label>Total à payer (FCFA)</label>
+<input type="number" id="total" readonly value="0">
+
+<div class="paiement">
+<strong>Paiement</strong><br><br>
+Numéro bénéficiaire : <strong>+225 07 57 10 98 28</strong><br><br>
+
+<button type="button" class="wave" onclick="payerWave()">Payer avec Wave</button>
+<button type="button" class="om" onclick="payerOM()">Payer avec Orange Money</button>
+</div>
+
+<label>Numéro ayant effectué le paiement</label>
+<input type="tel" placeholder="Si différent du contact">
+
+<button type="submit" class="submit">Valider l'attribution</button>
+
+</form>
+</div>
+
+<footer>
+📞 0757109828 | ✉️ regiondedabou@gmail.com<br>
+&copy; 2026 – Région de Dabou-Toupah
+</footer>
+
+<script>
+// Calcul du total avec quantité
+const form=document.getElementById("attributionForm");
+const totalField=document.getElementById("total");
+
+function calculerTotal(){
+  let total=0;
+  form.querySelectorAll('input[type=checkbox]').forEach(cb=>{
+    if(cb.checked){
+      const quantite=parseInt(cb.nextElementSibling.value) || 1;
+      total+=parseInt(cb.value)*quantite;
+    }
+  });
+  totalField.value=total;
+}
+
+// Mettre à jour total à chaque changement
+form.querySelectorAll('input[type=checkbox], input.quantite').forEach(el=>{
+  el.addEventListener('change', calculerTotal);
+});
+
+// Paiement Wave
+function payerWave(){
+  const total=parseInt(totalField.value);
+  if(total===0){
+    alert("Veuillez sélectionner au moins un article.");
+    return;
+  }
+  alert("Ouvrez Wave et envoyez "+total+" FCFA au 0757109828");
+}
+
+// Paiement Orange Money
+function payerOM(){
+  const total=parseInt(totalField.value);
+  if(total===0){
+    alert("Veuillez sélectionner au moins un article.");
+    return;
+  }
+  alert("Ouvrez Orange Money et envoyez "+total+" FCFA au 0757109828");
+}
+</script>
+
+</body>
+</html>

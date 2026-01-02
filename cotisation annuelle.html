@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Cotisation annuelle – Région de Dabou-Toupah</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  margin:0;
+  background:#eef4ff;
+}
+header{
+  background:#0b5ed7;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.container{
+  padding:20px;
+}
+h2{
+  color:#0b5ed7;
+  text-align:center;
+}
+form{
+  max-width:600px;
+  margin:20px auto;
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+}
+label{
+  font-weight:bold;
+}
+input,select{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+.paiement{
+  background:#f1f6ff;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:20px;
+  text-align:center;
+}
+.paiement button{
+  width:48%;
+  margin:5px 1%;
+  padding:12px;
+  font-size:16px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+.wave{
+  background:#1dc7a0;
+  color:white;
+}
+.om{
+  background:#ff7a00;
+  color:white;
+}
+button.submit{
+  background:#0b5ed7;
+  color:white;
+  border:none;
+  padding:12px;
+  width:100%;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+}
+button.submit:hover{
+  background:#084298;
+}
+footer{
+  background:#0b5ed7;
+  color:white;
+  text-align:center;
+  padding:15px;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>REGION DE DABOU-TOUPAH</h1>
+<nav>
+  <!-- Bouton Identification supprimé -->
+  <a href="Attribut.html">Attribut</a>
+  <a href="carte scout.html">Carte scoute</a>
+  <a href="soutien.html">Soutien</a>
+</nav>
+</header>
+
+<div class="container">
+<h2>Cotisation annuelle</h2>
+
+<form>
+
+<label>Nom</label>
+<input type="text" required>
+
+<label>Prénoms</label>
+<input type="text" required>
+
+<label>Date de naissance</label>
+<input type="date" required>
+
+<label>Contact</label>
+<input type="tel" required>
+
+<label>District</label>
+<input type="text" required>
+
+<label>Groupe</label>
+<input type="text" required>
+
+<label>Grade</label>
+<select id="grade" onchange="calculerSomme()" required>
+<option value="">-- Sélectionner --</option>
+<option value="louveteaux">Louveteaux</option>
+<option value="eclaireur">Éclaireur</option>
+<option value="pionnier">Pionnier</option>
+<option value="routier">Routier</option>
+<option value="chef_unite">Chef d’unité</option>
+<option value="chef_groupe">Chef de groupe</option>
+<option value="com_district">Commissaire de district</option>
+<option value="com_region">Commissaire de région</option>
+</select>
+
+<label>Montant à payer (FCFA)</label>
+<input type="number" id="somme" readonly>
+
+<div class="paiement">
+<strong>Paiement de la cotisation</strong><br><br>
+Numéro bénéficiaire : <strong>+225 07 57 10 98 28</strong><br><br>
+
+<button type="button" class="wave" onclick="payerWave()">Payer avec Wave</button>
+<button type="button" class="om" onclick="payerOM()">Payer avec Orange Money</button>
+</div>
+
+<label>Numéro ayant effectué le paiement</label>
+<input type="tel" placeholder="Si différent du contact">
+
+<button type="submit" class="submit">Valider la cotisation</button>
+
+</form>
+</div>
+
+<footer>
+📞 0757109828 | ✉️ regiondedabou@gmail.com<br>
+&copy; 2026 – Région de Dabou-Toupah
+</footer>
+
+<script>
+function calculerSomme(){
+  const grade=document.getElementById("grade").value;
+  const somme=document.getElementById("somme");
+  let montant=0;
+
+  if(grade==="com_region"||grade==="com_district") montant=5500;
+  else if(grade==="chef_groupe") montant=3500;
+  else if(grade==="chef_unite") montant=3000;
+  else if(grade==="routier") montant=2500;
+  else if(grade==="pionnier"||grade==="eclaireur") montant=2000;
+  else if(grade==="louveteaux") montant=1500;
+
+  somme.value=montant;
+}
+
+function payerWave(){
+  const montant=document.getElementById("somme").value;
+  if(!montant){
+    alert("Veuillez d'abord sélectionner un grade.");
+    return;
+  }
+  alert("Ouvrez Wave et envoyez "+montant+" FCFA au 0757109828");
+}
+
+function payerOM(){
+  const montant=document.getElementById("somme").value;
+  if(!montant){
+    alert("Veuillez d'abord sélectionner un grade.");
+    return;
+  }
+  alert("Ouvrez Orange Money et envoyez "+montant+" FCFA au 0757109828");
+}
+</script>
+
+</body>
+</html>
